@@ -1,0 +1,143 @@
+/*--------------------------------------------------------------------------------
+  Typograpic content for client side text areas and TinyMCE content in the CMS
+  --------------------------------------------------------------------------------*/
+
+@import 'variables'
+
+html
+  font-size: 16px
+  -webkit-font-smoothing: antialiased
+
+body
+  font-family: $font__body
+
+.typography
+  h1,
+  .h1
+    font-size: 230%
+    line-height: 120%
+    font-weight: bolder
+    font-family: $font__head
+    color: $color__black
+
+  h2,
+  .h2
+    font-size: 200%
+    line-height: 125%
+    font-weight: 600
+    color: $color__black
+    font-family: $font__head
+    margin-bottom: .3em
+
+  h3,
+  .h3
+    font-size: 160%
+    line-height: 125%
+    font-weight: 600
+    font-family: $font__head
+    color: $color__black
+
+  p,
+  .p
+    margin-bottom: 1em
+
+  p,
+  .p,
+  .button
+    font-size: 90%
+    line-height: 150%
+    letter-spacing: .5px
+    font-family: $font__body
+    color: $color__black
+
+  em
+    font-style: italic
+
+  ul
+    margin: 0 0 1em
+    padding: 0 0 0 1.5em
+    list-style-type: disc
+    line-height: 150%
+    letter-spacing: .5px
+
+  ol
+    margin: 0 0 1em
+    padding: 0 0 0 1.5em
+    list-style-type: decimal
+    line-height: 150%
+    letter-spacing: .5px
+
+  a
+    outline: none !important
+    color: $color__black
+
+    &:hover
+      text-decoration: none
+
+  &:hover
+    text-decoration: none
+
+  strong
+    font-weight: bold
+
+  img
+    max-width: 100%
+    height: auto
+    vertical-align: middle
+
+    &.left,
+    &.right,
+    &.leftAlone,
+    &.center
+      display: block
+      float: none
+      margin: 0 auto 1em
+
+  table
+    width: 100%
+    margin: 1.6em 0
+
+    td
+      padding: .75em
+
+@include respond(360px)
+  .typography
+    h1,
+    .h1
+      font-size: 265%
+
+    p,
+    .p,
+    .button
+      font-size: 100%
+
+@include respond(500px)
+  .typography
+    img
+      &.left
+      &.right
+      &.leftAlone
+        display: inline-block
+
+      &.left
+        float: left
+        margin: 0 1em 0 0
+
+      &.right
+        float: right
+        margin: 0 0 0 1em
+
+      &.leftAlone
+        float: left
+        margin: 0 100% 0 0
+
+@include respond(1450px)
+  .typography
+    h1,
+    .h1
+      font-size: 270%
+
+    p,
+    .p,
+    .button
+      font-size: 110%
