@@ -1,0 +1,171 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none; }
+
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/*----------------------------------------------------------------------------------
+  Mixin shortcut for responsive media queries
+  ----------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------
+  Typograpic content for client side text areas and TinyMCE content in the CMS
+  --------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------
+  CSS Variables
+  --------------------------------------------------------------------------------*/
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased; }
+
+body {
+  font-family: "Arial", sans-serif; }
+
+.typography h1,
+.typography .h1 {
+  font-size: 230%;
+  line-height: 120%;
+  font-weight: bolder;
+  font-family: "Arial", sans-serif;
+  color: #000; }
+
+.typography h2,
+.typography .h2 {
+  font-size: 200%;
+  line-height: 125%;
+  font-weight: 600;
+  color: #000;
+  font-family: "Arial", sans-serif;
+  margin-bottom: .3em; }
+
+.typography h3,
+.typography .h3 {
+  font-size: 160%;
+  line-height: 125%;
+  font-weight: 600;
+  font-family: "Arial", sans-serif;
+  color: #000; }
+
+.typography p,
+.typography .p {
+  margin-bottom: 1em; }
+
+.typography p,
+.typography .p,
+.typography .button {
+  font-size: 90%;
+  line-height: 150%;
+  letter-spacing: .5px;
+  font-family: "Arial", sans-serif;
+  color: #000; }
+
+.typography em {
+  font-style: italic; }
+
+.typography ul {
+  margin: 0 0 1em;
+  padding: 0 0 0 1.5em;
+  list-style-type: disc;
+  line-height: 150%;
+  letter-spacing: .5px; }
+
+.typography ol {
+  margin: 0 0 1em;
+  padding: 0 0 0 1.5em;
+  list-style-type: decimal;
+  line-height: 150%;
+  letter-spacing: .5px; }
+
+.typography a {
+  outline: none !important;
+  color: #000; }
+  .typography a:hover {
+    text-decoration: none; }
+
+.typography:hover {
+  text-decoration: none; }
+
+.typography strong {
+  font-weight: bold; }
+
+.typography img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle; }
+  .typography img.left, .typography img.right, .typography img.leftAlone, .typography img.center {
+    display: block;
+    float: none;
+    margin: 0 auto 1em; }
+
+.typography table {
+  width: 100%;
+  margin: 1.6em 0; }
+  .typography table td {
+    padding: .75em; }
+
+@media screen and (min-width: 360px) {
+  .typography h1,
+  .typography .h1 {
+    font-size: 265%; }
+  .typography p,
+  .typography .p,
+  .typography .button {
+    font-size: 100%; } }
+
+@media screen and (min-width: 500px) {
+  .typography img.leftAlone {
+    display: inline-block; }
+  .typography img.left {
+    float: left;
+    margin: 0 1em 0 0; }
+  .typography img.right {
+    float: right;
+    margin: 0 0 0 1em; }
+  .typography img.leftAlone {
+    float: left;
+    margin: 0 100% 0 0; } }
+
+@media screen and (min-width: 1450px) {
+  .typography h1,
+  .typography .h1 {
+    font-size: 270%; }
+  .typography p,
+  .typography .p,
+  .typography .button {
+    font-size: 110%; } }
+
+/*--------------------------------------------------------------------------------
+  CSS Variables
+  --------------------------------------------------------------------------------*/
+h3 {
+  color: yellow; }

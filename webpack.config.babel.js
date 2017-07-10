@@ -28,6 +28,21 @@ const pluginOpt = {
   }
 }
 
+const extractEditor = new ExtractTextPlugin({
+  filename: 'css/editor.css',
+});
+const extractMain = new ExtractTextPlugin({
+  filename: 'css/style.css',
+});
+
+
+let sassUse;
+if(process.env.NODE_ENV === 'development') {
+  sassUse = ['style-loader', 'css-loader','sass-loader','import-glob-loader'];
+} else {
+  sassUse = extractMain.extract({fallback: 'style-loader', use: ['css-loader','sass-loader','import-glob-loader']});
+}
+
 // Main config
 export default {
   entry: "./src/bundle.js",
@@ -41,15 +56,22 @@ export default {
   module: {
     rules: [
       {
-        test: /\.s(a|c)ss$/i,
+        test: /\.css/i,
+        use: ['style-loader', 'css-loader']
+      },
+      {
+        test: /[^editor].\.s(a|c)ss$/i,
         include: /src\/sass/,
         exclude: /node_modules/,
-        use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader',
-          'import-glob-loader'
-        ],
+        use: sassUse
+      },
+      {
+        test: /editor\.s(a|c)ss/i,
+        include: /src\/sass/,
+        use: extractEditor.extract({
+          fallback: 'style-loader',
+          use: ['css-loader', 'sass-loader', 'import-glob-loader']
+        })
       },
       {
         enforce: "pre",
@@ -104,5 +126,7 @@ export default {
     new StyleLintPlugin(pluginOpt.sassLint),
     new BrowserSyncPlugin(pluginOpt.browserSync),
     new DashboardPlugin(),
+    extractEditor,
+    extractMain
   ]
 }

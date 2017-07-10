@@ -77,6 +77,7 @@ var _main2 = _interopRequireDefault(_main);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 __webpack_require__(6);
+__webpack_require__(10);
 
 (0, _main2.default)();
 
@@ -193,51 +194,12 @@ module.exports = g;
 
 /***/ }),
 /* 6 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(7);
-if(typeof content === 'string') content = [[module.i, content, '']];
-// Prepare cssTransformation
-var transform;
-
-var options = {}
-options.transform = transform
-// add the styles to the DOM
-var update = __webpack_require__(9)(content, options);
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!../../node_modules/import-glob-loader/index.js!./style.sass", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!../../node_modules/import-glob-loader/index.js!./style.sass");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 /* 7 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(8)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "/* http://meyerweb.com/eric/tools/css/reset/\n   v2.0 | 20110126\n   License: none (public domain)\n*/\nhtml, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  font-size: 100%;\n  font: inherit;\n  vertical-align: baseline; }\n\n/* HTML5 display-role reset for older browsers */\narticle, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {\n  display: block; }\n\nbody {\n  line-height: 1; }\n\nol, ul {\n  list-style: none; }\n\nblockquote, q {\n  quotes: none; }\n\nblockquote:before, blockquote:after {\n  content: '';\n  content: none; }\n\nq:before, q:after {\n  content: '';\n  content: none; }\n\ntable {\n  border-collapse: collapse;\n  border-spacing: 0; }\n\n/*----------------------------------------------------------------------------------\n  Mixin shortcut for responsive media queries\n  ----------------------------------------------------------------------------------*/\n/*--------------------------------------------------------------------------------\n  Typograpic content for client side text areas and TinyMCE content in the CMS\n  --------------------------------------------------------------------------------*/\n/*--------------------------------------------------------------------------------\n  CSS Variables\n  --------------------------------------------------------------------------------*/\nhtml {\n  font-size: 16px;\n  -webkit-font-smoothing: antialiased; }\n\nbody {\n  font-family: \"Arial\", sans-serif; }\n\n.typography h1,\n.typography .h1 {\n  font-size: 230%;\n  line-height: 120%;\n  font-weight: bolder;\n  font-family: \"Arial\", sans-serif;\n  color: #000; }\n\n.typography h2,\n.typography .h2 {\n  font-size: 200%;\n  line-height: 125%;\n  font-weight: 600;\n  color: #000;\n  font-family: \"Arial\", sans-serif;\n  margin-bottom: .3em; }\n\n.typography h3,\n.typography .h3 {\n  font-size: 160%;\n  line-height: 125%;\n  font-weight: 600;\n  font-family: \"Arial\", sans-serif;\n  color: #000; }\n\n.typography p,\n.typography .p {\n  margin-bottom: 1em; }\n\n.typography p,\n.typography .p,\n.typography .button {\n  font-size: 90%;\n  line-height: 150%;\n  letter-spacing: .5px;\n  font-family: \"Arial\", sans-serif;\n  color: #000; }\n\n.typography em {\n  font-style: italic; }\n\n.typography ul {\n  margin: 0 0 1em;\n  padding: 0 0 0 1.5em;\n  list-style-type: disc;\n  line-height: 150%;\n  letter-spacing: .5px; }\n\n.typography ol {\n  margin: 0 0 1em;\n  padding: 0 0 0 1.5em;\n  list-style-type: decimal;\n  line-height: 150%;\n  letter-spacing: .5px; }\n\n.typography a {\n  outline: none !important;\n  color: #000; }\n  .typography a:hover {\n    text-decoration: none; }\n\n.typography:hover {\n  text-decoration: none; }\n\n.typography strong {\n  font-weight: bold; }\n\n.typography img {\n  max-width: 100%;\n  height: auto;\n  vertical-align: middle; }\n  .typography img.left, .typography img.right, .typography img.leftAlone, .typography img.center {\n    display: block;\n    float: none;\n    margin: 0 auto 1em; }\n\n.typography table {\n  width: 100%;\n  margin: 1.6em 0; }\n  .typography table td {\n    padding: .75em; }\n\n@media screen and (min-width: 360px) {\n  .typography h1,\n  .typography .h1 {\n    font-size: 265%; }\n  .typography p,\n  .typography .p,\n  .typography .button {\n    font-size: 100%; } }\n\n@media screen and (min-width: 500px) {\n  .typography img.leftAlone {\n    display: inline-block; }\n  .typography img.left {\n    float: left;\n    margin: 0 1em 0 0; }\n  .typography img.right {\n    float: right;\n    margin: 0 0 0 1em; }\n  .typography img.leftAlone {\n    float: left;\n    margin: 0 100% 0 0; } }\n\n@media screen and (min-width: 1450px) {\n  .typography h1,\n  .typography .h1 {\n    font-size: 270%; }\n  .typography p,\n  .typography .p,\n  .typography .button {\n    font-size: 110%; } }\n\n/*--------------------------------------------------------------------------------\n  CSS Variables\n  --------------------------------------------------------------------------------*/\n/* Styles: Theme landing page - delete this after install                                  */\n/*----------------------------------------------------------------------------------*/\nbody {\n  background: blue; }\n\n@media screen and (min-width: 600px) {\n  body {\n    background: red !important; } }\n\nbody {\n  width: 100vw;\n  height: 100vh;\n  background-size: cover; }\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 8 */
 /***/ (function(module, exports) {
 
 /*
@@ -319,7 +281,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 9 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -365,7 +327,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(10);
+var	fixUrls = __webpack_require__(9);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -678,7 +640,7 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
-/* 10 */
+/* 9 */
 /***/ (function(module, exports) {
 
 
@@ -770,6 +732,51 @@ module.exports = function (css) {
 	// send back the fixed css
 	return fixedCss;
 };
+
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(11);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(8)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!../../node_modules/import-glob-loader/index.js!./style.sass", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!../../node_modules/import-glob-loader/index.js!./style.sass");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(7)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "/* http://meyerweb.com/eric/tools/css/reset/\n   v2.0 | 20110126\n   License: none (public domain)\n*/\nhtml, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  font-size: 100%;\n  font: inherit;\n  vertical-align: baseline; }\n\n/* HTML5 display-role reset for older browsers */\narticle, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {\n  display: block; }\n\nbody {\n  line-height: 1; }\n\nol, ul {\n  list-style: none; }\n\nblockquote, q {\n  quotes: none; }\n\nblockquote:before, blockquote:after {\n  content: '';\n  content: none; }\n\nq:before, q:after {\n  content: '';\n  content: none; }\n\ntable {\n  border-collapse: collapse;\n  border-spacing: 0; }\n\n/*----------------------------------------------------------------------------------\n  Mixin shortcut for responsive media queries\n  ----------------------------------------------------------------------------------*/\n/*--------------------------------------------------------------------------------\n  Typograpic content for client side text areas and TinyMCE content in the CMS\n  --------------------------------------------------------------------------------*/\n/*--------------------------------------------------------------------------------\n  CSS Variables\n  --------------------------------------------------------------------------------*/\nhtml {\n  font-size: 16px;\n  -webkit-font-smoothing: antialiased; }\n\nbody {\n  font-family: \"Arial\", sans-serif; }\n\n.typography h1,\n.typography .h1 {\n  font-size: 230%;\n  line-height: 120%;\n  font-weight: bolder;\n  font-family: \"Arial\", sans-serif;\n  color: #000; }\n\n.typography h2,\n.typography .h2 {\n  font-size: 200%;\n  line-height: 125%;\n  font-weight: 600;\n  color: #000;\n  font-family: \"Arial\", sans-serif;\n  margin-bottom: .3em; }\n\n.typography h3,\n.typography .h3 {\n  font-size: 160%;\n  line-height: 125%;\n  font-weight: 600;\n  font-family: \"Arial\", sans-serif;\n  color: #000; }\n\n.typography p,\n.typography .p {\n  margin-bottom: 1em; }\n\n.typography p,\n.typography .p,\n.typography .button {\n  font-size: 90%;\n  line-height: 150%;\n  letter-spacing: .5px;\n  font-family: \"Arial\", sans-serif;\n  color: #000; }\n\n.typography em {\n  font-style: italic; }\n\n.typography ul {\n  margin: 0 0 1em;\n  padding: 0 0 0 1.5em;\n  list-style-type: disc;\n  line-height: 150%;\n  letter-spacing: .5px; }\n\n.typography ol {\n  margin: 0 0 1em;\n  padding: 0 0 0 1.5em;\n  list-style-type: decimal;\n  line-height: 150%;\n  letter-spacing: .5px; }\n\n.typography a {\n  outline: none !important;\n  color: #000; }\n  .typography a:hover {\n    text-decoration: none; }\n\n.typography:hover {\n  text-decoration: none; }\n\n.typography strong {\n  font-weight: bold; }\n\n.typography img {\n  max-width: 100%;\n  height: auto;\n  vertical-align: middle; }\n  .typography img.left, .typography img.right, .typography img.leftAlone, .typography img.center {\n    display: block;\n    float: none;\n    margin: 0 auto 1em; }\n\n.typography table {\n  width: 100%;\n  margin: 1.6em 0; }\n  .typography table td {\n    padding: .75em; }\n\n@media screen and (min-width: 360px) {\n  .typography h1,\n  .typography .h1 {\n    font-size: 265%; }\n  .typography p,\n  .typography .p,\n  .typography .button {\n    font-size: 100%; } }\n\n@media screen and (min-width: 500px) {\n  .typography img.leftAlone {\n    display: inline-block; }\n  .typography img.left {\n    float: left;\n    margin: 0 1em 0 0; }\n  .typography img.right {\n    float: right;\n    margin: 0 0 0 1em; }\n  .typography img.leftAlone {\n    float: left;\n    margin: 0 100% 0 0; } }\n\n@media screen and (min-width: 1450px) {\n  .typography h1,\n  .typography .h1 {\n    font-size: 270%; }\n  .typography p,\n  .typography .p,\n  .typography .button {\n    font-size: 110%; } }\n\n/*--------------------------------------------------------------------------------\n  CSS Variables\n  --------------------------------------------------------------------------------*/\n/* Styles: Theme landing page - delete this after install                                  */\n/*----------------------------------------------------------------------------------*/\nbody {\n  background: blue; }\n\n@media screen and (min-width: 600px) {\n  body {\n    background: red !important; } }\n\nbody {\n  width: 100vw;\n  height: 100vh;\n  background-size: cover; }\n", ""]);
+
+// exports
 
 
 /***/ })

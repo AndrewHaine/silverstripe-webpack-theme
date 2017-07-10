@@ -9,7 +9,7 @@
 <body>
     {$Form}
     <h1>Hello Hello</h1>
-
+    <h3>Test Test</h3>
     <script src="{$ThemeDir}/dist/bundle.js" charset="utf-8"></script>
 </body>
 </html>
