@@ -1,0 +1,11 @@
+/*----------------------------------------------------------------------------------
+  Mixin shortcut for responsive media queries
+  ----------------------------------------------------------------------------------*/
+
+@mixin respond($width)
+  @media screen and (min-width: $width)
+    @content
+
+@mixin retina
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
+    @content

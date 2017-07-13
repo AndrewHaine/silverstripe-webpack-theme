@@ -38,9 +38,9 @@ const extractMain = new ExtractTextPlugin({
 
 let sassUse;
 if(process.env.NODE_ENV === 'development') {
-  sassUse = ['style-loader', 'css-loader','sass-loader','import-glob-loader'];
+  sassUse = ['style-loader', 'css-loader','postcss-loader','sass-loader','import-glob-loader'];
 } else {
-  sassUse = extractMain.extract({fallback: 'style-loader', use: ['css-loader','sass-loader','import-glob-loader']});
+  sassUse = extractMain.extract({fallback: 'style-loader', use: ['css-loader','postcss-loader','sass-loader','import-glob-loader']});
 }
 
 // Main config
@@ -70,7 +70,7 @@ export default {
         include: /src\/sass/,
         use: extractEditor.extract({
           fallback: 'style-loader',
-          use: ['css-loader', 'sass-loader', 'import-glob-loader']
+          use: ['css-loader', 'postcss-loader','sass-loader', 'import-glob-loader']
         })
       },
       {
