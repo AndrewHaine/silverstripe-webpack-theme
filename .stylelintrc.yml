@@ -1,0 +1,4 @@
+## @todo: Linter Config
+
+rules:
+  length-zero-no-unit: true

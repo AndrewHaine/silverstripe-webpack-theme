@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "watch": "NODE_ENV=development webpack-dashboard -- webpack --watch",
+    "dev": "NODE_ENV=development webpack",
     "build": "NODE_ENV=production webpack"
   },
   "author": "",
@@ -28,9 +29,10 @@
     "import-glob-loader": "^1.1.0",
     "node-sass": "^4.5.3",
     "postcss-loader": "^2.0.6",
+    "postcss-scss": "^1.0.2",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
-    "stylelint-webpack-plugin": "^0.8.0",
+    "stylelint": "^7.13.0",
     "svg-inline-loader": "^0.7.1",
     "url-loader": "^0.5.9",
     "webpack": "^3.1.0",

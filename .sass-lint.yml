@@ -1,5 +1,0 @@
-## @todo: Linter Config
-## @todo: find out why CssSyntaxError is being thrown for sass files (specifically missing semi-colon)
-
-rules:
-  length-zero-no-unit: true

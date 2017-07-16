@@ -10,7 +10,6 @@ import path from 'path';
 // Plugins
 import BrowserSyncPlugin from 'browser-sync-webpack-plugin';
 import DashboardPlugin from 'webpack-dashboard/plugin';
-import StyleLintPlugin from 'stylelint-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
 // Useful directory names
@@ -22,9 +21,6 @@ const pluginOpt = {
   browserSync: {
       port: 3000,
       proxy: `http://${SITE_NAME}.dev`
-  },
-  sassLint: {
-    configFile: '.sass-lint.yml'
   }
 }
 
@@ -35,12 +31,14 @@ const extractMain = new ExtractTextPlugin({
   filename: 'css/style.css',
 });
 
-
 let sassUse;
 if(process.env.NODE_ENV === 'development') {
-  sassUse = ['style-loader', 'css-loader','postcss-loader','sass-loader','import-glob-loader'];
+  sassUse = ['style-loader','css-loader','postcss-loader','sass-loader','import-glob-loader'];
 } else {
-  sassUse = extractMain.extract({fallback: 'style-loader', use: ['css-loader','postcss-loader','sass-loader','import-glob-loader']});
+  sassUse = extractMain.extract({
+    fallback: 'style-loader',
+    use: ['css-loader','postcss-loader','sass-loader','import-glob-loader']
+  });
 }
 
 // Main config
@@ -123,7 +121,6 @@ export default {
   },
 
   plugins: [
-    new StyleLintPlugin(pluginOpt.sassLint),
     new BrowserSyncPlugin(pluginOpt.browserSync),
     new DashboardPlugin(),
     extractEditor,
