@@ -170,6 +170,7 @@ export default {
   devServer: pluginOpt.devServer,
 
   plugins: [
+    new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new BrowserSyncPlugin(pluginOpt.browserSync, {reload: false}),
     new DashboardPlugin(),
