@@ -4,7 +4,7 @@
   "description": "A silverstripe theme setup using webpack to bundle assets and provide a front end build system. ",
   "main": "index.js",
   "scripts": {
-    "watch": "NODE_ENV=development webpack-dashboard -- webpack --watch",
+    "watch": "NODE_ENV=development webpack-dashboard -- webpack-dev-server --quiet",
     "dev": "NODE_ENV=development webpack",
     "build": "NODE_ENV=production webpack"
   },
@@ -28,14 +28,16 @@
     "image-webpack-loader": "^3.3.1",
     "import-glob-loader": "^1.1.0",
     "node-sass": "^4.5.3",
+    "postcss": "^5.2.17",
     "postcss-loader": "^2.0.6",
+    "postcss-reporter": "^4.0.0",
     "postcss-scss": "^1.0.2",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
     "stylelint": "^7.13.0",
     "svg-inline-loader": "^0.7.1",
     "url-loader": "^0.5.9",
-    "webpack": "^3.1.0",
+    "webpack": "^3.3.0",
     "webpack-dashboard": "^0.4.0",
     "webpack-dev-server": "^2.5.1"
   }

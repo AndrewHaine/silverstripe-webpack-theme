@@ -19,10 +19,26 @@ const THEME_NAME = path.basename(__dirname);
 // Plugin options
 const pluginOpt = {
   browserSync: {
-      port: 3000,
-      proxy: `http://${SITE_NAME}.dev`
+    port: 3000,
+    proxy: 'http://localhost:3100',
+  },
+  devServer: {
+    hot: true,
+    port: 3100,
+    proxy: {
+      '*': {
+        'target': {
+          'host': `${SITE_NAME}.dev`,
+          'protocol': 'http',
+          'port': 80
+        },
+        ignorePath: true,
+        changeOrigin: true,
+        secure: false
+      }
+    }
   }
-}
+};
 
 const extractEditor = new ExtractTextPlugin({
   filename: 'css/editor.css',
@@ -33,7 +49,23 @@ const extractMain = new ExtractTextPlugin({
 
 let sassUse;
 if(process.env.NODE_ENV === 'development') {
-  sassUse = ['style-loader','css-loader','postcss-loader','sass-loader','import-glob-loader'];
+  sassUse = [
+    'style-loader',
+    'css-loader',
+    {
+      loader: 'postcss-loader',
+      options: {
+        sourceMap: 'inline'
+      }
+    },
+    {
+      loader: 'sass-loader',
+      options: {
+        sourceMap: true
+      }
+    },
+    'import-glob-loader'
+  ];
 } else {
   sassUse = extractMain.extract({
     fallback: 'style-loader',
@@ -43,12 +75,12 @@ if(process.env.NODE_ENV === 'development') {
 
 // Main config
 export default {
-  entry: "./src/bundle.js",
+  entry: './src/bundle.js',
 
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: `themes/${THEME_NAME}/dist/`,
-    filename: "bundle.js"
+    filename: 'bundle.js'
   },
 
   module: {
@@ -68,11 +100,26 @@ export default {
         include: /src\/sass/,
         use: extractEditor.extract({
           fallback: 'style-loader',
-          use: ['css-loader', 'postcss-loader','sass-loader', 'import-glob-loader']
+          use: [
+            'css-loader',
+            {
+              loader: 'postcss-loader',
+              options: {
+                sourceMap: true
+              }
+            },
+            {
+              loader: 'sass-loader',
+              options: {
+                sourceMap: true
+              }
+            },
+            'import-glob-loader'
+          ]
         })
       },
       {
-        enforce: "pre",
+        enforce: 'pre',
         test: /\.js$/i,
         exclude: /node_modules/,
         use: {
@@ -85,7 +132,7 @@ export default {
         use: {
           loader: 'babel-loader',
           options: {
-             presets: ['es2015']
+            presets: ['es2015']
           }
         }
       },
@@ -120,10 +167,13 @@ export default {
     ]
   },
 
+  devServer: pluginOpt.devServer,
+
   plugins: [
-    new BrowserSyncPlugin(pluginOpt.browserSync),
+    new webpack.HotModuleReplacementPlugin(),
+    new BrowserSyncPlugin(pluginOpt.browserSync, {reload: false}),
     new DashboardPlugin(),
     extractEditor,
     extractMain
   ]
-}
+};
