@@ -7,9 +7,18 @@
     <title>Document</title>
 </head>
 <body>
+
+    <% include Header %>
+
     {$Form}
-    <h1>Hello Hello</h1>
-    <h3>Test Test</h3>
+    {$Layout}
+
+    <% include Footer %>
+
+    <%-- Bundle file, could also be included using the Requirements API--%>
+
+    <%-- Once in production you can access the js and css files using
+         their respective tags rather than including the full bundle --%>
     <script src="{$ThemeDir}/dist/bundle.js" charset="utf-8"></script>
 </body>
 </html>
