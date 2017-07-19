@@ -60,7 +60,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "fe072d8303627806bdd3"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "94af5b7a7a15df82290b"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -705,160 +705,27 @@
 /******/ 	__webpack_require__.h = function() { return hotCurrentHash; };
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return hotCreateRequire(1)(__webpack_require__.s = 1);
+/******/ 	return hotCreateRequire("./src/bundle.js")(__webpack_require__.s = "./src/bundle.js");
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
+/******/ ({
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?{\"sourceMap\":\"inline\"}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true}!./node_modules/import-glob-loader/index.js!./src/sass/style.sass":
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(8)(undefined);
+exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")(undefined);
 // imports
 
 
 // module
-exports.push([module.i, "a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:\"\";content:none}table{border-collapse:collapse;border-spacing:0}html{font-size:16px;-webkit-font-smoothing:antialiased}body{font-family:Arial,sans-serif}.typography .h1,.typography h1{font-size:230%;line-height:120%;font-weight:bolder;font-family:Arial,sans-serif;color:#000}.typography .h2,.typography h2{font-size:200%;margin-bottom:.3em}.typography .h2,.typography .h3,.typography h2,.typography h3{line-height:125%;font-weight:600;color:#000;font-family:Arial,sans-serif}.typography .h3,.typography h3{font-size:160%}.typography .p,.typography p{margin-bottom:1em}.typography .button,.typography .p,.typography p{font-size:90%;line-height:150%;letter-spacing:.5px;font-family:Arial,sans-serif;color:#000}.typography em{font-style:italic}.typography ul{list-style-type:disc}.typography ol,.typography ul{margin:0 0 1em;padding:0 0 0 1.5em;line-height:150%;letter-spacing:.5px}.typography ol{list-style-type:decimal}.typography a{outline:none!important;color:#000}.typography:hover,.typography a:hover{text-decoration:none}.typography strong{font-weight:700}.typography img{max-width:100%;height:auto;vertical-align:middle}.typography img.center,.typography img.left,.typography img.leftAlone,.typography img.right{display:block;float:none;margin:0 auto 1em}.typography table{width:100%;margin:1.6em 0}.typography table td{padding:.75em}@media screen and (min-width:360px){.typography .h1,.typography h1{font-size:265%}.typography .button,.typography .p,.typography p{font-size:100%}}@media screen and (min-width:500px){.typography img.leftAlone{display:inline-block}.typography img.left{float:left;margin:0 1em 0 0}.typography img.right{float:right;margin:0 0 0 1em}.typography img.leftAlone{float:left;margin:0 100% 0 0}}@media screen and (min-width:1450px){.typography .h1,.typography h1{font-size:270%}.typography .button,.typography .p,.typography p{font-size:110%}}body{background:blue}*{color:#fff}", ""]);
+exports.push([module.i, "html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:700}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{-webkit-box-sizing:content-box;box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type=checkbox],input[type=radio]{-webkit-box-sizing:border-box;box-sizing:border-box;padding:0}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}input[type=search]{-webkit-appearance:textfield;-webkit-box-sizing:content-box;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:700}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}html{font-size:16px;-webkit-font-smoothing:antialiased}body{font-family:Arial,sans-serif}.typography .h1,.typography h1{font-size:230%;line-height:120%;font-weight:bolder;font-family:Arial,sans-serif;color:#000}.typography .h2,.typography h2{font-size:200%;margin-bottom:.3em}.typography .h2,.typography .h3,.typography h2,.typography h3{line-height:125%;font-weight:600;color:#000;font-family:Arial,sans-serif}.typography .h3,.typography h3{font-size:160%}.typography .p,.typography p{margin-bottom:1em}.typography .button,.typography .p,.typography p{font-size:90%;line-height:150%;letter-spacing:.5px;font-family:Arial,sans-serif;color:#000}.typography em{font-style:italic}.typography ul{list-style-type:disc}.typography ol,.typography ul{margin:0 0 1em;padding:0 0 0 1.5em;line-height:150%;letter-spacing:.5px}.typography ol{list-style-type:decimal}.typography a{outline:none!important;color:#000}.typography:hover,.typography a:hover{text-decoration:none}.typography strong{font-weight:700}.typography img{max-width:100%;height:auto;vertical-align:middle}.typography img.center,.typography img.left,.typography img.leftAlone,.typography img.right{display:block;float:none;margin:0 auto 1em}.typography table{width:100%;margin:1.6em 0}.typography table td{padding:.75em}body{background:blue}*{color:#fff}", ""]);
 
 // exports
 
 
 /***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-
-
-var _main = __webpack_require__(2);
-
-var _main2 = _interopRequireDefault(_main);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-__webpack_require__(7);
-__webpack_require__(11);
-
-(0, _main2.default)();
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-exports.default = function () {
-
-  var helloWorld = {
-    init: function init() {
-
-      console.log((0, _now2.default)());
-    }
-  };
-
-  helloWorld.init();
-};
-
-var _now = __webpack_require__(3);
-
-var _now2 = _interopRequireDefault(_now);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var root = __webpack_require__(4);
-
-/**
- * Gets the timestamp of the number of milliseconds that have elapsed since
- * the Unix epoch (1 January 1970 00:00:00 UTC).
- *
- * @static
- * @memberOf _
- * @since 2.4.0
- * @category Date
- * @returns {number} Returns the timestamp.
- * @example
- *
- * _.defer(function(stamp) {
- *   console.log(_.now() - stamp);
- * }, _.now());
- * // => Logs the number of milliseconds it took for the deferred invocation.
- */
-var now = function() {
-  return root.Date.now();
-};
-
-module.exports = now;
-
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var freeGlobal = __webpack_require__(5);
-
-/** Detect free variable `self`. */
-var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
-
-/** Used as a reference to the global object. */
-var root = freeGlobal || freeSelf || Function('return this')();
-
-module.exports = root;
-
-
-/***/ }),
-/* 5 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(global) {/** Detect free variable `global` from Node.js. */
-var freeGlobal = typeof global == 'object' && global && global.Object === Object && global;
-
-module.exports = freeGlobal;
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6)))
-
-/***/ }),
-/* 6 */
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1,eval)("this");
-} catch(e) {
-	// This works if the window reference is available
-	if(typeof window === "object")
-		g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ }),
-/* 7 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 8 */
+/***/ "./node_modules/css-loader/lib/css-base.js":
 /***/ (function(module, exports) {
 
 /*
@@ -940,7 +807,66 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 9 */
+
+/***/ "./node_modules/lodash/_freeGlobal.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(global) {/** Detect free variable `global` from Node.js. */
+var freeGlobal = typeof global == 'object' && global && global.Object === Object && global;
+
+module.exports = freeGlobal;
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__("./node_modules/webpack/buildin/global.js")))
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_root.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+var freeGlobal = __webpack_require__("./node_modules/lodash/_freeGlobal.js");
+
+/** Detect free variable `self`. */
+var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
+
+/** Used as a reference to the global object. */
+var root = freeGlobal || freeSelf || Function('return this')();
+
+module.exports = root;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/now.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+var root = __webpack_require__("./node_modules/lodash/_root.js");
+
+/**
+ * Gets the timestamp of the number of milliseconds that have elapsed since
+ * the Unix epoch (1 January 1970 00:00:00 UTC).
+ *
+ * @static
+ * @memberOf _
+ * @since 2.4.0
+ * @category Date
+ * @returns {number} Returns the timestamp.
+ * @example
+ *
+ * _.defer(function(stamp) {
+ *   console.log(_.now() - stamp);
+ * }, _.now());
+ * // => Logs the number of milliseconds it took for the deferred invocation.
+ */
+var now = function() {
+  return root.Date.now();
+};
+
+module.exports = now;
+
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/lib/addStyles.js":
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -986,7 +912,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(10);
+var	fixUrls = __webpack_require__("./node_modules/style-loader/lib/urls.js");
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -1299,7 +1225,8 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
-/* 10 */
+
+/***/ "./node_modules/style-loader/lib/urls.js":
 /***/ (function(module, exports) {
 
 
@@ -1394,13 +1321,98 @@ module.exports = function (css) {
 
 
 /***/ }),
-/* 11 */
+
+/***/ "./node_modules/webpack/buildin/global.js":
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1,eval)("this");
+} catch(e) {
+	// This works if the window reference is available
+	if(typeof window === "object")
+		g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
+
+/***/ "./src/bundle.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _main = __webpack_require__("./src/js/main.js");
+
+var _main2 = _interopRequireDefault(_main);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+__webpack_require__("./src/sass/editor.sass");
+__webpack_require__("./src/sass/style.sass");
+
+(0, _main2.default)();
+
+/***/ }),
+
+/***/ "./src/js/main.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = function () {
+
+  var helloWorld = {
+    init: function init() {
+
+      console.log((0, _now2.default)());
+    }
+  };
+
+  helloWorld.init();
+};
+
+var _now = __webpack_require__("./node_modules/lodash/now.js");
+
+var _now2 = _interopRequireDefault(_now);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ }),
+
+/***/ "./src/sass/editor.sass":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./src/sass/style.sass":
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(0);
+var content = __webpack_require__("./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?{\"sourceMap\":\"inline\"}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true}!./node_modules/import-glob-loader/index.js!./src/sass/style.sass");
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -1408,14 +1420,14 @@ var transform;
 var options = {}
 options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__(9)(content, options);
+var update = __webpack_require__("./node_modules/style-loader/lib/addStyles.js")(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(true) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept(0, function() {
-			var newContent = __webpack_require__(0);
+		module.hot.accept("./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?{\"sourceMap\":\"inline\"}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true}!./node_modules/import-glob-loader/index.js!./src/sass/style.sass", function() {
+			var newContent = __webpack_require__("./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?{\"sourceMap\":\"inline\"}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true}!./node_modules/import-glob-loader/index.js!./src/sass/style.sass");
 			if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
 			update(newContent);
 		});
@@ -1425,4 +1437,5 @@ if(true) {
 }
 
 /***/ })
-/******/ ]);
+
+/******/ });
