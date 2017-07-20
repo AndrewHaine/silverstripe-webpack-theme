@@ -60,7 +60,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "2c4eb487d9c6212b41ed"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "87b7c38603ad0f760bad"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -710,12 +710,12 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?{\"sourceMap\":\"inline\"}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true}!./node_modules/import-glob-loader/index.js!./src/sass/style.sass":
+/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js!./node_modules/sass-loader/lib/loader.js!./node_modules/import-glob-loader/index.js!./src/sass/style.sass":
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")(undefined);
 // imports
-
+exports.push([module.i, "@import url(//fonts.googleapis.com/css?family=PT+Sans:400,700);", ""]);
 
 // module
 exports.push([module.i, "html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:700}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{-webkit-box-sizing:content-box;box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type=checkbox],input[type=radio]{-webkit-box-sizing:border-box;box-sizing:border-box;padding:0}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}input[type=search]{-webkit-appearance:textfield;-webkit-box-sizing:content-box;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:700}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}html{font-size:16px;-webkit-font-smoothing:antialiased}body{font-family:sans-serif}.typography .h1,.typography h1{font-size:230%;line-height:120%;font-weight:bolder;font-family:sans-serif;color:#000}.typography .h2,.typography h2{font-size:200%;margin-bottom:.3em}.typography .h2,.typography .h3,.typography h2,.typography h3{line-height:125%;font-weight:600;color:#000;font-family:sans-serif}.typography .h3,.typography h3{font-size:160%}.typography .p,.typography p{margin-bottom:1em}.typography .button,.typography .p,.typography p{font-size:90%;line-height:150%;letter-spacing:.5px;font-family:sans-serif;color:#000}.typography em{font-style:italic}.typography ul{list-style-type:disc}.typography ol,.typography ul{margin:0 0 1em;padding:0 0 0 1.5em;line-height:150%;letter-spacing:.5px}.typography ol{list-style-type:decimal}.typography a{outline:none!important;color:#000}.typography:hover{text-decoration:none}.typography strong{font-weight:700}.typography img{max-width:100%;height:auto;vertical-align:middle}.typography.center,.typography.left,.typography.leftAlone,.typography.right{display:block;float:none;margin:0 auto 1em}.typography table{width:100%;margin:1.6em 0}.typography td{padding:.75em}body{padding-top:10px;text-align:center;background:#142237}*{color:#fff;font-family:PT Sans,sans-serif}.intro__plate{width:90%;max-width:850px;margin:100px auto}.intro__text{width:80%;margin:0 auto}.intro__code{display:inline-block;padding:5px 10px;background-color:hsla(0,0%,100%,.2);border-radius:4px}", ""]);
@@ -1412,7 +1412,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__("./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?{\"sourceMap\":\"inline\"}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true}!./node_modules/import-glob-loader/index.js!./src/sass/style.sass");
+var content = __webpack_require__("./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js!./node_modules/sass-loader/lib/loader.js!./node_modules/import-glob-loader/index.js!./src/sass/style.sass");
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -1426,8 +1426,8 @@ if(content.locals) module.exports = content.locals;
 if(true) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?{\"sourceMap\":\"inline\"}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true}!./node_modules/import-glob-loader/index.js!./src/sass/style.sass", function() {
-			var newContent = __webpack_require__("./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?{\"sourceMap\":\"inline\"}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true}!./node_modules/import-glob-loader/index.js!./src/sass/style.sass");
+		module.hot.accept("./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js!./node_modules/sass-loader/lib/loader.js!./node_modules/import-glob-loader/index.js!./src/sass/style.sass", function() {
+			var newContent = __webpack_require__("./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js!./node_modules/sass-loader/lib/loader.js!./node_modules/import-glob-loader/index.js!./src/sass/style.sass");
 			if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
 			update(newContent);
 		});
