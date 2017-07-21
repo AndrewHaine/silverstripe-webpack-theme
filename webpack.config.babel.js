@@ -77,7 +77,22 @@ export default {
         exclude: /node_modules/,
         use: extractMain.extract({
           fallback: 'style-loader',
-          use: ['css-loader','postcss-loader','sass-loader','import-glob-loader']
+          use: [
+            'css-loader',
+            {
+              loader: 'postcss-loader',
+              options: {
+                sourceMap: true
+              }
+            },
+            {
+              loader: 'sass-loader',
+              options: {
+                sourceMap: true
+              }
+            },
+            'import-glob-loader'
+          ]
         })
       },
       {
@@ -166,8 +181,9 @@ export default {
         changeOrigin: true,
         secure: false
       }
-    }
+    },
+    stats: 'errors-only'
   },
 
-  plugins: plugins
+  plugins: plugins,
 };
