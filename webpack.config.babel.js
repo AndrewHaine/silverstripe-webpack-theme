@@ -12,6 +12,7 @@ import path from 'path';
 import BrowserSyncPlugin from 'browser-sync-webpack-plugin';
 import DashboardPlugin from 'webpack-dashboard/plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import NotifierPlugin from 'webpack-notifier';
 
 
 /*
@@ -43,6 +44,7 @@ if(process.env.NODE_ENV === 'production') {
   ];
 } else {
   plugins = [
+    new NotifierPlugin({alwaysNotify: true}),
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new BrowserSyncPlugin({port: 3000, proxy: 'http://localhost:3100'}, {reload: false}),
