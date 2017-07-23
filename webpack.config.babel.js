@@ -13,6 +13,7 @@ import BrowserSyncPlugin from 'browser-sync-webpack-plugin';
 import DashboardPlugin from 'webpack-dashboard/plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import NotifierPlugin from 'webpack-notifier';
+import {sigVars, signature} from './signature';
 
 
 /*
@@ -21,7 +22,6 @@ import NotifierPlugin from 'webpack-notifier';
 
 const SITE_NAME = path.basename(path.join(__dirname, '/../../'));
 const THEME_NAME = path.basename(__dirname);
-
 
 /*
   Plugin configuration
@@ -42,6 +42,15 @@ if(process.env.NODE_ENV === 'production') {
     extractEditor,
     extractMain
   ];
+
+  // Signature Settings - disable in signature.js
+  if(sigVars.useSignature) {
+    plugins.push(new webpack.BannerPlugin({
+      banner: signature,
+      test: [/\.js$/, /\.css$/]
+    }));
+  }
+
 } else {
   plugins = [
     new NotifierPlugin({alwaysNotify: true}),
