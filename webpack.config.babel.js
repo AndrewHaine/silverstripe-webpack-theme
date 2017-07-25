@@ -182,13 +182,12 @@ export default {
     hot: true,
     port: 3000,
     proxy: {
-      '*': {
+      '/': {
         'target': {
           'host': `${SITE_NAME}.dev`,
           'protocol': 'http',
           'port': 80
         },
-        ignorePath: true,
         changeOrigin: true,
         secure: false
       }

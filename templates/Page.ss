@@ -19,6 +19,6 @@
 
     <%-- Once in production you can access the js and css files using
          their respective tags rather than including the full bundle --%>
-    <script src="{$ThemeDir}/dist/bundle.js" charset="utf-8"></script>
+    <script src="{$BaseURL}{$ThemeDir}/dist/bundle.js" charset="utf-8"></script>
 </body>
 </html>
