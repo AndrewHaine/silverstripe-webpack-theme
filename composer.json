@@ -1,0 +1,26 @@
+{
+	"name": "andrewhaine/silverstripe-webpack-theme",
+	"type": "silverstripe-theme",
+	"description": "Base SilverStripe theme with a webpack build system",
+	"keywords": ["silverstripe", "webpack", "webpack theme", "silverstripe webpack", "blank theme"],
+	"license": "BSD-3-Clause",
+	"authors": [
+		{
+			"name": "Andrew Haine",
+			"role": "Developer",
+			"email": "hello@andrewhaine.co.uk",
+			"homepage": "https://www.andrewhaine.co.uk"
+		}
+	],
+	"require":
+	{
+		"composer/installers": "*",
+		"silverstripe/framework": ">=3.5"
+	},
+	"extra": {
+		"installer-name": "sswebpack"
+	},
+	"support": {
+		"issues": "https://github.com/AndrewHaine/silverstripe-webpack-theme/issues"
+	}
+}
