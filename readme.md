@@ -31,7 +31,7 @@ Once development is complete eject your css and minify the bundle using `npm run
 
 ## Prerequisites
 The theme makes of assumptions about you development environment:
-* You are using a php server with a virtual host on \*.dev (editbale in the weback config file).
+* You are using a php server with a virtual host on \*.dev (editbale in the variables file).
 
 ## Signature
-The system gives the ability to add a signature to the top of your style and bundle files for the sake of branding, to edit the information shown or disable this feature edit the sigVars object in signature.js.
+The system gives the ability to add a signature to the top of your css and js files, to edit the information shown or disable this feature edit the options in variables.js.

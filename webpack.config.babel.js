@@ -12,7 +12,8 @@ import path from 'path';
 import DashboardPlugin from 'webpack-dashboard/plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import NotifierPlugin from 'webpack-notifier';
-import {sigVars, signature} from './signature';
+import v from './variables';
+import signature from './signature';
 
 
 /*
@@ -43,7 +44,7 @@ if(process.env.NODE_ENV === 'production') {
   ];
 
   // Signature Settings - disable in signature.js
-  if(sigVars.useSignature) {
+  if(v.useSignature) {
     plugins.push(new webpack.BannerPlugin({
       banner: signature,
       test: [/\.js$/, /\.css$/]
@@ -184,7 +185,7 @@ export default {
     proxy: {
       '/': {
         'target': {
-          'host': `${SITE_NAME}.dev`,
+          'host': `${SITE_NAME}.${v.serverAlias}`,
           'protocol': 'http',
           'port': 80
         },
