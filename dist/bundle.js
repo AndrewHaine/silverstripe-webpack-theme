@@ -60,7 +60,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "0b7fa779671f29dbb5b4"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "8e91f46de1a1cf307398"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -1356,16 +1356,11 @@ module.exports = g;
 "use strict";
 
 
-var _main = __webpack_require__("./src/js/main.js");
-
-var _main2 = _interopRequireDefault(_main);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-__webpack_require__("./src/sass/editor.sass");
 __webpack_require__("./src/sass/style.sass");
 
-(0, _main2.default)();
+__webpack_require__("./src/sass/editor.sass");
+
+__webpack_require__("./src/js/main.js");
 
 /***/ }),
 
@@ -1375,27 +1370,13 @@ __webpack_require__("./src/sass/style.sass");
 "use strict";
 
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-exports.default = function () {
-
-  var helloWorld = {
-    init: function init() {
-
-      console.log((0, _now2.default)());
-    }
-  };
-
-  helloWorld.init();
-};
-
 var _now = __webpack_require__("./node_modules/lodash/now.js");
 
 var _now2 = _interopRequireDefault(_now);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+console.warn('Hello World, the time is ' + (0, _now2.default)());
 
 /***/ }),
 

@@ -1,15 +1,3 @@
 import now from 'lodash/now';
 
-export default function () {
-
-  const helloWorld = {
-    init() {
-
-      console.log(now());
-
-    }
-  };
-
-  helloWorld.init();
-
-}
+console.warn('Hello World, the time is ' + now());
