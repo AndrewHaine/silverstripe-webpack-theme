@@ -172,7 +172,7 @@ export default {
       },
       {
         test: /\.svg$/i,
-        use: 'svg-inline-loader'
+        use: 'svg-url-loader'
       }
     ]
   },

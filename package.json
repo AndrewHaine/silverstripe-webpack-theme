@@ -36,12 +36,13 @@
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
     "stylelint": "^7.13.0",
-    "svg-inline-loader": "^0.7.1",
     "url-loader": "^0.5.9",
     "webpack": "^3.3.0",
     "webpack-dashboard": "^0.4.0",
     "webpack-dev-server": "^2.5.1",
     "webpack-notifier": "^1.5.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "svg-url-loader": "^2.1.1"
+  }
 }
