@@ -71,7 +71,7 @@ export default {
 
   output: {
     path: path.resolve(__dirname, 'dist'),
-    publicPath: `themes/${THEME_NAME}/dist/`,
+    publicPath: `/themes/${THEME_NAME}/dist/`,
     filename: 'bundle.js'
   },
 
