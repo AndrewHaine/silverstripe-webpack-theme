@@ -31,7 +31,7 @@ Once development is complete eject your css and minify the bundle using `npm run
 
 ## Prerequisites
 The theme makes of assumptions about you development environment:
-* You are using a php server with a virtual host on \*.dev (editbale in the variables file).
+* You are using a php server with a virtual host on \*.test (editable in the variables file).
 
 ## Signature
 The system gives the ability to add a signature to the top of your css and js files, to edit the information shown or disable this feature edit the options in variables.js.
