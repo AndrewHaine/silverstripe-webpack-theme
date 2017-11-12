@@ -18,6 +18,6 @@
     <% include Footer %>
 
     <%-- This bundle serves as both the base script for reloading with the dev-server and the final bundle for production --%>
-    <script src="{$BaseURL}{$ThemeDir}/javascript/dist/bundle.js" charset="utf-8"></script>
+    <% require themedJavascript('dist/bundle') %>
 </body>
 </html>
