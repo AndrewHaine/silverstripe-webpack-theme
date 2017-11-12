@@ -2,7 +2,7 @@
   "name": "ss-webpack",
   "version": "1.0.0",
   "description": "A silverstripe theme setup using webpack to bundle assets and provide a front end build system. ",
-  "main": "bundle.js",
+  "main": "index.js",
   "scripts": {
     "postinstall": "node postInstall.js",
     "watch": "NODE_ENV=development webpack-dashboard -- webpack-dev-server",

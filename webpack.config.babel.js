@@ -67,12 +67,12 @@ if(process.env.NODE_ENV === 'production') {
 */
 
 export default {
-  entry: './src/bundle.js',
-
+  context: path.resolve(__dirname),
+  entry: './index.js',
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: `/themes/${THEME_NAME}/dist/`,
-    filename: 'bundle.js'
+    path: path.resolve(__dirname),
+    publicPath: `/themes/${THEME_NAME}`,
+    filename: 'js/dist/bundle.js'
   },
 
   module: {
@@ -83,7 +83,7 @@ export default {
       },
       {
         test: /[^editor].\.s(a|c)ss$/i,
-        include: /src\/sass/,
+        include: /s(a|c)ss/,
         exclude: /node_modules/,
         use: extractMain.extract({
           fallback: 'style-loader',
@@ -107,7 +107,7 @@ export default {
       },
       {
         test: /editor\.s(a|c)ss/i,
-        include: /src\/sass/,
+        include: /s(a|c)ss/,
         use: extractEditor.extract({
           fallback: 'style-loader',
           use: [
@@ -148,13 +148,15 @@ export default {
       },
       {
         test: /\.(png|jpg|gif)$/i,
-        include: /src\/images/,
+        include: /images/,
         use: [
           {
             loader: 'url-loader',
             options: {
-              limit: 30000,
-              name: 'images/[name].[ext]'
+              fallback: 'image-webpack-loader',
+              limit: 10000,
+              publicPath: `/themes/${THEME_NAME}/`,
+              name: '[path][name].[ext]'
             }
           },
           {
@@ -172,7 +174,25 @@ export default {
       },
       {
         test: /\.svg$/i,
-        use: 'svg-url-loader'
+        include: /images/,
+        use: [
+          {
+            loader: 'svg-url-loader',
+            options: {
+              limit: 1000,
+              publicPath: `/themes/${THEME_NAME}/`,
+              name: '[path][name].[ext]',
+              stripdeclarations: true
+            }
+          },
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              publicPath: `/themes/${THEME_NAME}/`,
+              name: '[path][name].[ext]',
+            }
+          },
+        ]
       }
     ]
   },
