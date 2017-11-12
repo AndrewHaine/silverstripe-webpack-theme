@@ -72,7 +72,7 @@ export default {
   output: {
     path: path.resolve(__dirname),
     publicPath: `/themes/${THEME_NAME}`,
-    filename: 'js/dist/bundle.js'
+    filename: 'javascript/dist/bundle.js'
   },
 
   module: {

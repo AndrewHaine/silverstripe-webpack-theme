@@ -7,4 +7,4 @@ import './sass/style.sass';
 import './sass/editor.sass';
 
 /** JS */
-import './js/src/main.js';
+import './javascript/src/main.js';

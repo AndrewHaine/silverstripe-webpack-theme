@@ -14,7 +14,7 @@ The setup will also produce an editor.css file which is used by SilverStripe to 
 (Linting is coming soon)
 
 ### JavaScript
-Javascript is included in the bundle in much the same way as CSS, the entry point for javascript in this theme is js/src/main.js.
+Javascript is included in the bundle in much the same way as CSS, the entry point for javascript in this theme is javascript/src/main.js.
 
 The theme comes set up for development using ES6 Syntax but this can be adjusted accordingly by installing babel presets and changing the settings in .eslintrc.yml.
 
@@ -26,7 +26,7 @@ The build system uses webpack dev server which allows hot reloading for speedy t
 
 With the server started you should then see your site updating live on localhost:3000 when any asset files are changed.
 
-Once development is complete eject your css and minify the bundle using `npm run build`. This will create the main CSS file (css/style.css) and your JS bundle (js/dist/bundle.js) which can then be included in your templates.
+Once development is complete eject your css and minify the bundle using `npm run build`. This will create the main CSS file (css/style.css) and your JS bundle (javascript/dist/bundle.js) which can then be included in your templates.
 
 ## Prerequisites
 The theme makes of assumptions about you development environment:
