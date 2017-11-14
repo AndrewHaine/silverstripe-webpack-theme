@@ -7,11 +7,11 @@ Copy this theme into a subdirectory of your themes folder and run `npm install`.
 This theme is designed to optimise your production build by minifying assets and optimising images. Any assets referenced (explicitly or implicitly) in index.js will be compiled.
 
 ### CSS
+This theme supports both SCSS and Sass syntax.
+
 The recommended entry point for all CSS is sass/style.sass, any files imported will be bundled into a single CSS file which can be included in the way you choose (Requirements API, link tag etc..).
 
 The setup will also produce an editor.css file which is used by SilverStripe to style the TinyMCE fields in the CMS, styles imported into sass/editor.sass will be included in this file.
-
-(Linting is coming soon)
 
 ### JavaScript
 Javascript is included in the bundle in much the same way as CSS, the entry point for javascript in this theme is javascript/src/main.js.
