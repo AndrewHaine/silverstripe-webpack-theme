@@ -1,7 +1,15 @@
 # Base SilverStripe theme with a webpack build system
 
 ## Installation
-Copy this theme into a subdirectory of your themes folder and run `npm install`.
+
+### Composer
+This theme can be installed through composer, simply add the following line to your project's composer.json file.
+```
+require: "andrewhaine/silverstripe-webpack-theme": "~1.0"
+```
+
+### Manual Installation
+Copy this theme into a subdirectory of your themes folder.
 
 ## Usage
 This theme is designed to optimise your production build by minifying assets and optimising images. Any assets referenced (explicitly or implicitly) in index.js will be compiled.
