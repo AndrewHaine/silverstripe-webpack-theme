@@ -10,6 +10,7 @@
 import webpack from 'webpack';
 import path from 'path';
 import DashboardPlugin from 'webpack-dashboard/plugin';
+import StylelintPlugin from 'stylelint-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import NotifierPlugin from 'webpack-notifier';
 import v from './variables';
@@ -57,6 +58,10 @@ if(process.env.NODE_ENV === 'production') {
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new DashboardPlugin(),
+    new StylelintPlugin({
+      configFile: './.stylelintrc.yml',
+      emitErrors: false
+    }),
     extractEditor,
   ];
 }
