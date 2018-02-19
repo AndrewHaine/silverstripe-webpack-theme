@@ -40,7 +40,7 @@ With the server started you should then see your site updating live on localhost
 Once development is complete eject your css and minify the bundle using `npm run build`. This will create the main CSS file (css/style.css) and your JS bundle (javascript/dist/bundle.js) which can then be included in your templates.
 
 ## Prerequisites
-The theme makes of assumptions about you development environment:
+Requirements for using this theme:
 * You are using a php server with a virtual host on \*.test (editable in the variables file).
 
 ## Signature
