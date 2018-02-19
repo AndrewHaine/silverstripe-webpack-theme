@@ -1,6 +1,5 @@
 /*
  Webpack Config!
- Andrew Haine // hello@andrewhaine.co.uk
 */
 
 /*
