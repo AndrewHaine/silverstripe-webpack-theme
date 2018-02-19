@@ -1,0 +1,18 @@
+# Rules for the css linter - edit as required
+extends: 'stylelint-config-recommended'
+rules:
+  color-hex-case: 'lower'
+  font-family-name-quotes: 'always-unless-keyword'
+  length-zero-no-unit: true
+  max-nesting-depth: 5
+  property-case: 'lower'
+  selector-attribute-quotes: 'always'
+  selector-combinator-space-after: 'always'
+  selector-combinator-space-before: 'always'
+  selector-pseudo-class-case: 'lower'
+  selector-pseudo-element-case: 'lower'
+  selector-type-case: 'lower'
+  shorthand-property-no-redundant-values: true
+  string-quotes: 'single'
+  unit-case: 'lower'
+  value-keyword-case: 'lower'

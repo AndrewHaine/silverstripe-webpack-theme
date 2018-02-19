@@ -21,6 +21,9 @@ The recommended entry point for all CSS is sass/style.sass, any files imported w
 
 The setup will also produce an editor.css file which is used by SilverStripe to style the TinyMCE fields in the CMS, styles imported into sass/editor.sass will be included in this file.
 
+#### Linting
+Linting is available from stylelint for SCSS and Sass files, the rules for the linter can be updated in .stylelintrc.yml. A full list of rules can be found [here](https://stylelint.io/user-guide/rules/).
+
 ### JavaScript
 Javascript is included in the bundle in much the same way as CSS, the entry point for javascript in this theme is javascript/src/main.js.
 
@@ -41,4 +44,4 @@ The theme makes of assumptions about you development environment:
 * You are using a php server with a virtual host on \*.test (editable in the variables file).
 
 ## Signature
-The system gives the ability to add a signature to the top of your css and js files, to edit the information shown or disable this feature edit the options in variables.js.
+The system gives the ability to add a signature to the top of your css and js files, to edit the information shown or disable this feature, edit the options in variables.js.
