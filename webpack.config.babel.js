@@ -38,6 +38,15 @@ let plugins; // Define a variable to store plugin options
 
 if(process.env.NODE_ENV === 'production') {
   plugins = [
+
+    // Split files in 'node_modules' out into a 'vendors'
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendors',
+      minChunks: function(module) {
+        return module.context && module.context.includes("node_modules");
+      }
+    }),
+
     new webpack.optimize.UglifyJsPlugin(),
     extractEditor,
     extractMain
@@ -47,7 +56,7 @@ if(process.env.NODE_ENV === 'production') {
   if(v.useSignature) {
     plugins.push(new webpack.BannerPlugin({
       banner: signature,
-      test: [/\.js$/, /\.css$/]
+      test: [/[^vendors].\.js$/, /\.css$/]
     }));
   }
 
@@ -72,11 +81,13 @@ if(process.env.NODE_ENV === 'production') {
 
 export default {
   context: path.resolve(__dirname),
-  entry: './index.js',
+  entry: {
+    bundle: './index.js'
+  },
   output: {
     path: path.resolve(__dirname),
     publicPath: `/themes/${THEME_NAME}`,
-    filename: 'javascript/dist/bundle.js'
+    filename: 'javascript/dist/[name].js'
   },
 
   module: {

@@ -18,6 +18,7 @@
     <% include Footer %>
 
     <%-- This bundle serves as both the base script for reloading with the dev-server and the final bundle for production --%>
+    <% require themedJavascript('dist/vendors') %>
     <% require themedJavascript('dist/bundle') %>
 </body>
 </html>
