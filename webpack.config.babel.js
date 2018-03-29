@@ -228,6 +228,23 @@ const svg = {
   ]
 };
 
+/**
+ * Webfonts rule
+ * Imports any webfonts through the file loader
+ */
+const webfonts = {
+  test: /\.(ttf|eot|woff|woff2)$/i,
+  include: /webfonts/,
+  use: [
+    {
+      loader: 'file-loader',
+      options: {
+        name: 'webfonts/[name].[ext]'
+      }
+    }
+  ]
+};
+
 /*
   Main Config Object
 */
@@ -250,7 +267,8 @@ export default {
       eslint,
       javascript,
       images,
-      svg
+      svg,
+      webfonts
     ]
   },
   devServer: {
