@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <% require themedCSS('style') %>
+    <% require themedCSS('main') %>
 
 </head>
 <body>
@@ -18,7 +18,8 @@
     <% include Footer %>
 
     <%-- This bundle serves as both the base script for reloading with the dev-server and the final bundle for production --%>
-    <% require themedJavascript('dist/vendors') %>
-    <% require themedJavascript('dist/bundle') %>
+
+    <% require themedJavascript('vendors/vendors') %>
+    <% require themedJavascript('dist/main') %>
 </body>
 </html>

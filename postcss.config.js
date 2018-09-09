@@ -4,6 +4,6 @@ module.exports = {
       'browsers': ['last 2 versions']
     },
     'cssnano': {},
-    'postcss-reporter': {}
+    'postcss-reporter': []
   }
 };

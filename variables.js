@@ -9,5 +9,5 @@ export default {
   'authorLine': 'YOUR NAME',
   'authorURI': 'your-website.com',
   'includeTimestamp': false, // Show the time of last build in the signature
-  'serverAlias': 'test' // dev server (webpack will proxy this) e.g. my-fancy-site.test
+  'proxyHost': 'http://ahaine.test' // Important! Replace this with the host address of your SilverStripe site
 };

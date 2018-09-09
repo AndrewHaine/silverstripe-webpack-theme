@@ -1,5 +1,5 @@
 import Moment from 'moment';
-import v from './variables';
+import v from '../variables';
 
 // Build comment
 const signature = `
