@@ -5,17 +5,18 @@
   "main": "index.js",
   "scripts": {
     "postinstall": "npm run build",
-    "watch": "webpack-dev-server --config webpack/webpack.dev.babel.js",
+    "watch": "webpack-dashboard -- webpack-dev-server --config webpack/webpack.dev.babel.js",
     "build": "webpack --progress -p --config webpack/webpack.prod.babel.js"
   },
   "repository": "https://github.com/AndrewHaine/silverstripe-webpack-theme",
   "author": "Andrew Haine",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/register": "^7.0.0",
     "autoprefixer": "^9.1.5",
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.5",
-    "babel-preset-env": "^1.7.0",
+    "babel-loader": "^8.0.2",
     "clean-webpack-plugin": "^0.1.19",
     "css-hot-loader": "^1.4.2",
     "css-loader": "^1.0.0",
@@ -41,6 +42,7 @@
     "url-loader": "^1.1.1",
     "webpack": "^4.17.2",
     "webpack-cli": "^3.1.0",
+    "webpack-dashboard": "^2.0.0",
     "webpack-dev-server": "^3.1.7",
     "webpack-merge": "^4.1.4",
     "webpack-notifier": "^1.6.0"

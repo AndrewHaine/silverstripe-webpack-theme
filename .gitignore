@@ -8,3 +8,8 @@
 
 # MacOS
 *.DS_Store
+
+# Bundled assets shouldn't be committed
+/css/
+/javascript/dist/
+/javascript/vendors/

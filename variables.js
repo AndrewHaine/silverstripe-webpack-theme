@@ -9,5 +9,5 @@ export default {
   'authorLine': 'YOUR NAME',
   'authorURI': 'your-website.com',
   'includeTimestamp': false, // Show the time of last build in the signature
-  'proxyHost': 'http://ahaine.test' // Important! Replace this with the host address of your SilverStripe site
+  'proxyHost': 'http://localhost:8090' // Important! Replace this with the host address of your SilverStripe site
 };

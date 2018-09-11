@@ -1,6 +1,8 @@
 import path from 'path';
-import MiniCSSExtractPlugin from 'mini-css-extract-plugin';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
+import MiniCSSExtractPlugin from 'mini-css-extract-plugin';
+import NotifierPlugin from 'webpack-notifier';
+import StylelintPlugin from 'stylelint-webpack-plugin';
 
 const THEME_DIRNAME = path.basename(path.join(__dirname, '/../'));
 
@@ -11,7 +13,7 @@ const THEME_DIRNAME = path.basename(path.join(__dirname, '/../'));
 
 /**
  * JS rules
- * checks imported files for eslint errors then uses babel to transpile
+ * Checks imported files for eslint errors then uses babel to transpile
  */
 const eslint = {
   enforce: 'pre',
@@ -29,17 +31,14 @@ const javascript = {
   test: /\.js$/i,
   exclude: /node_modules/,
   use: {
-    loader: 'babel-loader',
-    options: {
-      presets: ['env']
-    }
+    loader: 'babel-loader'
   }
 };
 
 
 /**
  * CSS rule
- * takes .css files and loads them into the bundle using the style loader
+ * Takes .css files and loads them into the bundle using the style loader
  */
 const css = {
   test: /\.css/i,
@@ -49,21 +48,17 @@ const css = {
 
 /**
  * SASS rules
- * handles all things to do with compiling and linting sass
- * -- will also create a separate `editor.css` file for SilverStripe to use in the CMS
+ * Handles all things to do with compiling and linting sass
  */
 const CSSExtractPlugin = new MiniCSSExtractPlugin({
   filename: "css/[name].css"
 });
 
-// handle everything except editor.sass
 const sass = {
   test: /\.s(a|c)ss$/i,
-  exclude: /node_modules/,
   use: [
     MiniCSSExtractPlugin.loader,
     'css-loader',
-    // 'resolve-url-loader',
     {
       loader: 'postcss-loader',
       options: {
@@ -82,7 +77,7 @@ const sass = {
 
 /**
  * Images rule
- * compresses images - images under 10kb will be inlined using a base64 data-uri
+ * Compresses images - images under 10kb will be inlined using a base64 data-uri
  */
 const images = {
   test: /\.(png|gif|jpe?g)$/i,
@@ -113,7 +108,7 @@ const images = {
 
 /**
  * SVG rule
- * compresses / inlines any svg images
+ * Compresses / inlines any svg images
  */
 const svg = {
   test: /\.svg$/i,
@@ -135,7 +130,7 @@ const svg = {
 
 /**
  * Webfonts rule
- * imports any webfonts through the file loader
+ * Imports any webfonts through the file loader
  */
 const webfonts = {
   test: /\.(ttf|eot|woff|woff2)$/i,
@@ -158,11 +153,28 @@ const webfonts = {
 
 /**
  * CleanWebpackPlugin
- * removes old builds of bundles to avoid stale assets and conflicts
+ * Removes old builds of bundles to avoid stale assets and conflicts
  */
 const cleanWebpack = new CleanWebpackPlugin(['css', 'javascript/dist', 'javascript/vendors'], {
   root: path.resolve(__dirname, '../'),
   verbose: true
+});
+
+/**
+ * StylelintPlugin
+ * Config for linting all sass files
+ */
+const stylelintPlugin = new StylelintPlugin({
+  configFile: './.stylelintrc.yml',
+  emitErrors: false
+});
+
+/**
+ * NotifierPlugin
+ * Uses system notifications to track build completions
+ */
+const notifierPlugin = new NotifierPlugin({
+  alwaysNotify: true
 });
 
 
@@ -179,7 +191,7 @@ export default {
   output: {
     path: path.join(__dirname, '/../'),
     publicPath: `/themes/${THEME_DIRNAME}`,
-    filename: 'javascript/dist/[name].js'
+    filename: 'javascript/dist/[name].bundle.js'
   },
   module: {
     rules: [
@@ -194,6 +206,8 @@ export default {
   },
   plugins: [
     CSSExtractPlugin,
-    cleanWebpack
+    cleanWebpack,
+    stylelintPlugin,
+    notifierPlugin
   ]
 };
