@@ -1,5 +1,7 @@
+import webpack from 'webpack';
 import merge from 'webpack-merge';
 import common from './webpack.common.babel';
+import signature from './_signature';
 
 export default merge(
   common,
@@ -16,6 +18,12 @@ export default merge(
           }
         }
       }
-    }
+    },
+    plugins: [
+      new webpack.BannerPlugin({
+        banner: signature,
+        test: [ /[^vendors*].\.js$/, /\.css$/ ]
+      })
+    ]
   }
 );

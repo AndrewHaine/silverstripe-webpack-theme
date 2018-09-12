@@ -8,6 +8,6 @@ export default {
   'themeDescription': 'My custom theme',
   'authorLine': 'YOUR NAME',
   'authorURI': 'your-website.com',
-  'includeTimestamp': false, // Show the time of last build in the signature
+  'includeTimestamp': true, // Show the time of last build in the signature
   'proxyHost': 'http://localhost:8080' // Important! Replace this with the host address of your SilverStripe site
 };

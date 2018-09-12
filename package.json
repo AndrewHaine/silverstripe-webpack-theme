@@ -6,7 +6,7 @@
   "scripts": {
     "postinstall": "npm run build",
     "watch": "webpack-dashboard -- webpack-dev-server --config webpack/webpack.dev.babel.js",
-    "build": "webpack --progress -p --config webpack/webpack.prod.babel.js"
+    "build": "webpack --progress --config webpack/webpack.prod.babel.js"
   },
   "repository": "https://github.com/AndrewHaine/silverstripe-webpack-theme",
   "author": "Andrew Haine",
@@ -21,12 +21,12 @@
     "css-hot-loader": "^1.4.2",
     "css-loader": "^1.0.0",
     "cssnano": "^4.1.0",
+    "date-fns": "^2.0.0-alpha.16",
     "eslint": "^5.5.0",
     "eslint-loader": "^2.1.0",
     "file-loader": "^1.1.11",
     "image-webpack-loader": "^4.3.1",
     "mini-css-extract-plugin": "^0.4.2",
-    "moment": "^2.22.2",
     "node-sass": "^4.9.3",
     "postcss": "^7.0.2",
     "postcss-loader": "^2.1.6",
