@@ -1,5 +1,6 @@
 import webpack from 'webpack';
 import merge from 'webpack-merge';
+import NotifierPlugin from 'webpack-notifier';
 import DashboardPlugin from 'webpack-dashboard/plugin';
 import common from './webpack.common.babel';
 import opts from '../variables';
@@ -31,7 +32,8 @@ export default merge.smartStrategy({ 'module.rules.use' : 'prepend' })(
     },
     plugins: [
       new webpack.HotModuleReplacementPlugin(),
-      new DashboardPlugin()
+      new DashboardPlugin(),
+      new NotifierPlugin({ alwaysNotify: true })
     ]
   }
 );

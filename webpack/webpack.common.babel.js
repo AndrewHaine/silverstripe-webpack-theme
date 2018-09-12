@@ -1,7 +1,7 @@
 import path from 'path';
+import webpack from 'webpack';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
 import MiniCSSExtractPlugin from 'mini-css-extract-plugin';
-import NotifierPlugin from 'webpack-notifier';
 import StylelintPlugin from 'stylelint-webpack-plugin';
 
 const THEME_DIRNAME = path.basename(path.join(__dirname, '/../'));
@@ -59,18 +59,8 @@ const sass = {
   use: [
     MiniCSSExtractPlugin.loader,
     'css-loader',
-    {
-      loader: 'postcss-loader',
-      options: {
-        sourceMap: true
-      }
-    },
-    {
-      loader: 'sass-loader',
-      options: {
-        sourceMap: true
-      }
-    }
+    'postcss-loader',
+    'sass-loader'
   ]
 };
 
@@ -94,6 +84,7 @@ const images = {
     {
       loader: 'image-webpack-loader',
       options: {
+        disable: true,
         optipng: {
           optimizationLevel: 5
         },
@@ -169,14 +160,6 @@ const stylelintPlugin = new StylelintPlugin({
   emitErrors: false
 });
 
-/**
- * NotifierPlugin
- * Uses system notifications to track build completions
- */
-const notifierPlugin = new NotifierPlugin({
-  alwaysNotify: true
-});
-
 
 /**
  * Webpack common export
@@ -185,8 +168,7 @@ const notifierPlugin = new NotifierPlugin({
 
 export default {
   entry: {
-    main: path.resolve(__dirname, '../bundles/main.js'),
-    editor: path.resolve(__dirname, '../bundles/editor.js')
+    main: path.resolve(__dirname, '../bundles/main.js')
   },
   output: {
     path: path.join(__dirname, '/../'),
@@ -195,7 +177,6 @@ export default {
   },
   module: {
     rules: [
-      css,
       sass,
       eslint,
       javascript,
@@ -205,9 +186,10 @@ export default {
     ]
   },
   plugins: [
-    CSSExtractPlugin,
     cleanWebpack,
+    CSSExtractPlugin,
     stylelintPlugin,
-    notifierPlugin
+    new webpack.PrefetchPlugin('./bundles/main.js'),
+    new webpack.PrefetchPlugin('./sass/style.sass')
   ]
 };
