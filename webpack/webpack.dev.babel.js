@@ -19,7 +19,6 @@ export default merge.smartStrategy({ 'module.rules.use' : 'prepend' })(
     devServer: {
       clientLogLevel: 'error',
       hot: true,
-      hotOnly: true,
       open: true,
       port: 3000,
       proxy: {
