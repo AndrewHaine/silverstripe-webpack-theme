@@ -5,8 +5,10 @@
 ### Composer
 This theme can be installed through composer, simply add the following line to your project's composer.json file.
 ```
-require: "andrewhaine/silverstripe-webpack-theme": "~1.0"
+require: "andrewhaine/silverstripe-webpack-theme": "~2.0"
 ```
+
+**If you are installing with composer it is advisable to remove the above option from your composer.json file after the initial installation in order to avoid installing duplicate themes or overriding your changes.**
 
 ### Manual Installation
 Copy this theme into a subdirectory of your themes folder.
@@ -32,16 +34,16 @@ The theme comes set up for development using ES6 Syntax but this can be adjusted
 ### Images
 Any images imported into the bundle, either directly or through a URL reference will be optimised, where possible files will be inlined using Data URIs, if an image is above 10kb it will be compressed using the image-webpack-loader and placed in the images directory (Names and extensions are preserved). Images need to be placed in the 'images' directory.
 
+By default image compression is disabled for performance purposes - when the time comes to bundle images for production this can be re-enabled with the `disable` option in `webpack.common.babel.js`.
+
 ### Development
+In order to use the watch task you will need to tell webpack which url it should proxy when creating the development server - this is the development url you are using for your project. This option can be set in `variables.js`.
+
 The build system uses webpack dev server which allows hot reloading for speedy testing. To start the server run `npm run watch`. The server will start on port 3000 you will also get a nice terminal interface courtesy of [FormidableLabs](https://github.com/FormidableLabs/webpack-dashboard).
 
 With the server started you should then see your site updating live on localhost:3000 when any asset files are changed.
 
-Once development is complete eject your css and minify the bundle using `npm run build`. This will create the main CSS file (css/style.css) and your JS bundle (javascript/dist/bundle.js) which can then be included in your templates.
-
-## Prerequisites
-Requirements for using this theme:
-* You are using a php server with a virtual host on \*.test (editable in the variables file).
+Once development is complete eject your css and minify the bundle using `npm run build`. This will create the main CSS file (css/main.css) and your JS bundle (javascript/dist/main.bundle.js) which can then be included in your templates.
 
 ## Signature
-The system gives the ability to add a signature to the top of your css and js files, to edit the information shown or disable this feature, edit the options in variables.js.
+The system gives the ability to add a signature to the top of your css and js files, to edit the information shown or disable this feature, edit the options in `variables.js`.

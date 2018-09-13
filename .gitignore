@@ -1,2 +1,15 @@
+# \_O___/
+#    \__
+#    |  \,
+#   /      [node_modules]
+
+# Node/NPM
 /node_modules/
-.DS_Store
+
+# MacOS
+*.DS_Store
+
+# Bundled assets shouldn't be committed
+/css/
+/javascript/dist/
+/javascript/vendors/
