@@ -146,7 +146,7 @@ const webfonts = {
  * CleanWebpackPlugin
  * Removes old builds of bundles to avoid stale assets and conflicts
  */
-const cleanWebpack = new CleanWebpackPlugin(['css', 'javascript/dist', 'javascript/vendors'], {
+const cleanWebpack = new CleanWebpackPlugin(['css/main.css', 'css/editor.css', 'javascript/dist', 'javascript/vendors'], {
   root: path.resolve(__dirname, '../'),
   verbose: true
 });
