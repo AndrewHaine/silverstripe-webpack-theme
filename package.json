@@ -1,6 +1,6 @@
 {
   "name": "ss-webpack",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A silverstripe theme setup using webpack to bundle assets and provide a front end build system. ",
   "main": "index.js",
   "scripts": {
