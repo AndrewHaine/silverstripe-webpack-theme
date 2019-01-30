@@ -1,10 +1,10 @@
-import path from 'path';
-import webpack from 'webpack';
-import CleanWebpackPlugin from 'clean-webpack-plugin';
-import MiniCSSExtractPlugin from 'mini-css-extract-plugin';
-import StylelintPlugin from 'stylelint-webpack-plugin';
+import path from "path";
+import webpack from "webpack";
+import CleanWebpackPlugin from "clean-webpack-plugin";
+import MiniCSSExtractPlugin from "mini-css-extract-plugin";
+import StylelintPlugin from "stylelint-webpack-plugin";
 
-const THEME_DIRNAME = path.basename(path.join(__dirname, '/../'));
+const THEME_DIRNAME = path.basename(path.join(__dirname, "/../"));
 
 /**
  * Common rules
@@ -16,13 +16,13 @@ const THEME_DIRNAME = path.basename(path.join(__dirname, '/../'));
  * Checks imported files for eslint errors then uses babel to transpile
  */
 const eslint = {
-  enforce: 'pre',
+  enforce: "pre",
   test: /\.js$/i,
   exclude: /node_modules/,
   use: {
-    loader: 'eslint-loader',
+    loader: "eslint-loader",
     options: {
-      configFile: './.eslintrc.yml'
+      configFile: "./.eslintrc.yml"
     }
   }
 };
@@ -31,10 +31,9 @@ const javascript = {
   test: /\.js$/i,
   exclude: /node_modules/,
   use: {
-    loader: 'babel-loader'
+    loader: "babel-loader"
   }
 };
-
 
 /**
  * CSS rule
@@ -42,9 +41,8 @@ const javascript = {
  */
 const css = {
   test: /\.css/i,
-  use: ['style-loader', 'css-loader']
+  use: ["style-loader", "css-loader"]
 };
-
 
 /**
  * SASS rules
@@ -58,12 +56,11 @@ const sass = {
   test: /\.s(a|c)ss$/i,
   use: [
     MiniCSSExtractPlugin.loader,
-    'css-loader',
-    'postcss-loader',
-    'sass-loader'
+    "css-loader",
+    "postcss-loader",
+    "sass-loader"
   ]
 };
-
 
 /**
  * Images rule
@@ -74,28 +71,27 @@ const images = {
   include: /images/,
   use: [
     {
-      loader: 'url-loader',
+      loader: "url-loader",
       options: {
         limit: 10000,
-        publicPath: `/themes/${THEME_DIRNAME}/`,
-        name: '[path][name].[ext]'
+        publicPath: `/resources/themes/${THEME_DIRNAME}/`,
+        name: "[path][name].[ext]"
       }
     },
     {
-      loader: 'image-webpack-loader',
+      loader: "image-webpack-loader",
       options: {
         disable: true,
         optipng: {
           optimizationLevel: 5
         },
         mozjpeg: {
-          interlaced: true,
+          interlaced: true
         }
       }
     }
   ]
 };
-
 
 /**
  * SVG rule
@@ -106,18 +102,17 @@ const svg = {
   include: /images/,
   use: [
     {
-      loader: 'svg-url-loader',
+      loader: "svg-url-loader",
       options: {
         limit: 100,
-        publicPath: `/themes/${THEME_DIRNAME}/`,
-        name: '[path][name].[ext]',
+        publicPath: `/resources/themes/${THEME_DIRNAME}/`,
+        name: "[path][name].[ext]",
         stripdeclarations: true
       }
     },
-    'image-webpack-loader'
+    "image-webpack-loader"
   ]
 };
-
 
 /**
  * Webfonts rule
@@ -128,14 +123,13 @@ const webfonts = {
   include: /webfonts/,
   use: [
     {
-      loader: 'file-loader',
+      loader: "file-loader",
       options: {
-        name: 'webfonts/[name].[ext]'
+        name: "webfonts/[name].[ext]"
       }
     }
   ]
 };
-
 
 /**
  * Plugins
@@ -146,20 +140,22 @@ const webfonts = {
  * CleanWebpackPlugin
  * Removes old builds of bundles to avoid stale assets and conflicts
  */
-const cleanWebpack = new CleanWebpackPlugin(['css/main.css', 'css/editor.css', 'javascript/dist', 'javascript/vendors'], {
-  root: path.resolve(__dirname, '../'),
-  verbose: true
-});
+const cleanWebpack = new CleanWebpackPlugin(
+  ["css/main.css", "css/editor.css", "javascript/dist", "javascript/vendors"],
+  {
+    root: path.resolve(__dirname, "../"),
+    verbose: true
+  }
+);
 
 /**
  * StylelintPlugin
  * Config for linting all sass files
  */
 const stylelintPlugin = new StylelintPlugin({
-  configFile: './.stylelintrc.yml',
+  configFile: "./.stylelintrc.yml",
   emitErrors: false
 });
-
 
 /**
  * Webpack common export
@@ -168,28 +164,21 @@ const stylelintPlugin = new StylelintPlugin({
 
 export default {
   entry: {
-    main: path.resolve(__dirname, '../bundles/main.js')
+    main: path.resolve(__dirname, "../bundles/main.js")
   },
   output: {
-    path: path.join(__dirname, '/../'),
-    publicPath: `/themes/${THEME_DIRNAME}`,
-    filename: 'javascript/dist/[name].bundle.js'
+    path: path.join(__dirname, "/../"),
+    publicPath: `/resources/themes/${THEME_DIRNAME}`,
+    filename: "javascript/dist/[name].bundle.js"
   },
   module: {
-    rules: [
-      sass,
-      eslint,
-      javascript,
-      images,
-      svg,
-      webfonts
-    ]
+    rules: [sass, eslint, javascript, images, svg, webfonts]
   },
   plugins: [
     cleanWebpack,
     CSSExtractPlugin,
     stylelintPlugin,
-    new webpack.PrefetchPlugin('./bundles/main.js'),
-    new webpack.PrefetchPlugin('./sass/style.sass')
+    new webpack.PrefetchPlugin("./bundles/main.js"),
+    new webpack.PrefetchPlugin("./sass/style.sass")
   ]
 };
